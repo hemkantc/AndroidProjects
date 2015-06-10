@@ -1,0 +1,178 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:id="@+id/relative"
+	tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Capacity Planning"
+        android:textColor="#0000ff"
+        android:textSize="10pt" />
+	
+    <View 
+        android:layout_width="fill_parent"
+		android:layout_height="2dip"
+		android:layout_below="@id/head"
+		android:background="@color/material_blue_grey_800"/>
+    
+    <TextView
+        android:id="@+id/blockText"
+        android:layout_width="125dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/head"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="9dip"
+        android:layout_marginTop="20dip"
+        android:text="Block Size"
+        android:textColor="#444444"
+        android:textSize="8pt" />
+
+    <Spinner
+        android:id="@+id/blockEdit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pct_spinner"
+        android:layout_alignTop="@id/blockText"
+        android:layout_toRightOf="@id/blockText"
+        android:entries="@array/block_arrays"
+        android:prompt="@string/block_prompt" />
+
+    <TextView
+        android:id="@+id/pctText"
+        android:layout_width="125dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/blockText"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="9dip"
+        android:layout_marginTop="15dip"
+        android:text="PCT Free"
+        android:textColor="#444444"
+        android:textSize="8pt" />
+
+    <Spinner
+        android:id="@+id/pct_spinner"
+        android:layout_width="150dip"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cols_spinner"
+        android:layout_alignLeft="@id/blockEdit"
+        android:layout_alignTop="@id/pctText"
+        android:entries="@array/pctfree_arrays" />
+    
+    <TextView
+        android:id="@+id/colsText"
+        android:layout_width="125dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/pctText"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="9dip"
+        android:layout_marginTop="15dip"
+        android:text="No. of Columns"
+        android:textColor="#444444"
+        android:textSize="8pt" />
+
+	<Spinner
+	    android:id="@+id/cols_spinner"
+	    android:layout_width="125dip"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/colsText"
+	    android:layout_alignLeft="@id/pct_spinner"
+	    android:layout_alignTop="@id/colsText"
+	    android:entries="@array/column_arrays" />
+    
+   <!--  <EditText
+        android:id="@+id/colsEdit"
+        android:layout_width="126dip"
+        android:layout_height="30dip"
+        android:layout_alignLeft="@id/pct_spinner"
+        android:layout_alignTop="@id/colsText"
+        android:background="@android:drawable/editbox_background"
+        android:inputType="number" 
+        /> -->
+    
+
+
+     <Button
+        android:id="@+id/btn_Create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/colsText"
+        android:layout_alignBottom="@+id/colsText"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/cols_spinner"
+        android:text="Go"
+        android:onClick="createTable" />
+
+     <View
+         android:id="@+id/ruler1"
+         android:layout_width="fill_parent"
+         android:layout_height="2dip"
+         android:layout_alignParentLeft="true"
+         android:layout_below="@+id/colsText"
+         android:layout_marginTop="14dp"
+         android:background="@color/material_blue_grey_800"
+         android:paddingTop="2dip" />
+	
+	<TableLayout
+	    android:id="@+id/table1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/ruler1" >
+
+	</TableLayout>
+	
+	<View
+         android:id="@+id/ruler2"
+         android:layout_width="fill_parent"
+         android:layout_height="2dip"
+         android:layout_alignParentLeft="true"
+         android:layout_below="@id/table1"
+         android:layout_marginTop="14dp"
+         android:background="@color/material_blue_grey_800"
+         android:paddingTop="2dip" />
+	
+	<TableLayout
+	    android:id="@+id/table2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/ruler2" 
+	    android:gravity="clip_horizontal">
+	    <TableRow 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content">
+		    
+		    <TextView
+		        android:id="@+id/rowsText"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textColor="#444444"
+		        android:textSize="8pt"
+		        android:text="No. of rows" />
+		    <EditText
+		        android:id="@+id/rowsEdit"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@android:drawable/editbox_background"
+		        android:hint="row numbers" />
+		</TableRow>    
+		<TableRow
+		    android:layout_width="wrap_content"
+	        android:layout_height="wrap_content">
+		    
+		    <Button
+		        android:id="@+id/cal_total_size"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="Calculate Total DB Size"
+		        android:onClick="collectViews" />
+		</TableRow>
+	</TableLayout>
+</RelativeLayout>
