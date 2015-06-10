@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DB</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="block_arrays">
+        <item>8K(default)</item>
+        <item>2K</item>
+        <item>16K</item>
+        <item>32K</item>
+        <item>64K</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Block size"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/productID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/block_arrays"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:spinnerMode="dropdown"/>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PCT Free"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/productID2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/block_arrays"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:spinnerMode="dropdown"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No. of Columns"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/productID4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:hint=" "/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No. of Columns"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/productID3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/block_arrays"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:spinnerMode="dropdown"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp" >
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Columns" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add_string" />
+    </LinearLayout>
+
+</LinearLayout>
+
